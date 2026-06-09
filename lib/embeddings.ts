@@ -17,8 +17,13 @@ export async function generateEmbeddings(texts: string[]) {
 
     const { embeddings } = await embedMany({
         model: google.embeddingModel("gemini-embedding-001"),
-        values: inputs
-    })
+        values: inputs,
+        providerOptions: {
+            google: {
+                outputDimensionality: 1536,
+            },
+        },
+    });
 
     return embeddings
 }

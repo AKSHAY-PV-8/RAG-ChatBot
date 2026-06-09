@@ -1,4 +1,3 @@
-import { table } from "console";
 import { pgTable, serial, text, vector, index } from "drizzle-orm/pg-core";
 
 
